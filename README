@@ -1,0 +1,3 @@
+A proof-of-concept sinatra app for hooking into minitest::unit and running tests in the background with resque.
+
+The reason? Creating a grading back-end for a CMU course that allows configurable timeouts, can gather reliable data without using regexp, and won't impact performance of the server.
