@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %title= @title
+    %meta(charset="UTF-8")
+    %link{ :rel => "stylesheet", :href => 'reset.css' }
+    %link{ :rel => "stylesheet", :href => 'style.css' }
+    %link{ :rel => "stylesheet", :href => 'ruby.css' }
+  %body
+    .header
+      %ul.nav
+        - links = [['Submit', '/'], ['Submissions', '/submissions']]
+        - links.each do |name, url|
+          - if current_url == url
+            %li.current
+              %a{ :href => url }= name
+          - else
+            %li
+              %a{ :href => url }= name
+          
+    #main
+      = yield
+    
+    #footer
+      %p
+        Riddle me this.

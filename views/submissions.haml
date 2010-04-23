@@ -1,0 +1,14 @@
+%table
+  %tr 
+    %th Job
+    %th Score
+    %th Test Summary
+    %th
+
+  - @submissions.each do |s|
+    %tr
+      %td= s.name
+      %td= s.score.nil?? "Pending..." : s.score
+      %td= s.results.map(&:result).join
+      %td
+        = @converter.convert("\n" + s.code)

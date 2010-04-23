@@ -1,0 +1,18 @@
+%h1 Submit
+%p
+  Submit some code to the autotester
+  %form{ :method => "POST", :enctype => "multipart/form-data" }
+    %input{ :name => "file", :type => "file" }
+    %br
+    %input{ :value => "Submit", :type => "submit" }
+
+%h1 Status
+%p
+  There are
+  = @info[:pending]
+  pending and
+  = @info[:processed]
+  processed jobs across
+  = @info[:queues]
+  queues
+
