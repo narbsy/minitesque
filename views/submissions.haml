@@ -11,4 +11,4 @@
       %td= s.score.nil?? "Pending..." : s.score
       %td= s.results.map(&:result).join
       %td
-        = @converter.convert("\n" + s.code)
+        = CodeRay.scan(s.code, :ruby).div(:css => :class, :line_numbers => :inline)

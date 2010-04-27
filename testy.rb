@@ -3,7 +3,7 @@
 require 'sinatra/base'
 require 'haml'
 require 'resque'
-require 'syntax/convertors/html'
+require 'coderay'
 require 'lib/job'
 
 class Testy < Sinatra::Base
@@ -47,7 +47,6 @@ class Testy < Sinatra::Base
   get '/submissions' do
     @title = "Testy Resque :: Submissions"
     @submissions = Submission.all
-    @converter = Syntax::Convertors::HTML.for_syntax("ruby")
     haml :submissions
   end
 end
