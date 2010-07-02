@@ -19,7 +19,9 @@ class Testy < Sinatra::Base
 
     def current_url
       request.path_info
-    end end 
+    end
+  end
+
   get '/' do
     @title = "Testy Resque"
     @info = Resque.info
