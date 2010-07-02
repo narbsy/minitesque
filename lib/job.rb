@@ -46,8 +46,9 @@ module Job
       check_result  :test => test, :submission => sub, 
                     :result => "E", :report => e.message
 
-      s.score = 0
-      s.save
+      puts "saving submission"
+      sub.score = 0
+      sub.save
     end
     puts "Didn't error..."
 
